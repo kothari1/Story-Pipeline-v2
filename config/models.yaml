@@ -1,0 +1,33 @@
+models:
+  flash:
+    name: "gemini-2.5-flash"
+    rpm: 5
+    rpd: 20
+    default_temperature: 0.8
+    max_output_tokens: 8192
+    min_call_spacing_seconds: 12
+  flash_lite:
+    name: "gemini-2.5-flash-lite"
+    rpm: 15
+    rpd: 100
+    default_temperature: 0.3
+    max_output_tokens: 4096
+    min_call_spacing_seconds: 4
+  pro:
+    name: "gemini-2.5-pro"
+    rpm: 5
+    rpd: 0
+    default_temperature: 0.4
+    max_output_tokens: 8192
+    min_call_spacing_seconds: 12
+
+stage_models:
+  outline: flash
+  generation: flash
+  critique: pro
+  critique_fast: flash
+  revision: flash
+  safety: flash_lite
+
+fallback:
+  pro: flash

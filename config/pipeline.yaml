@@ -1,0 +1,24 @@
+generation:
+  num_versions: 2
+  temperatures: [0.7, 0.9]
+  word_count_min: 500
+  word_count_max: 800
+
+readability:
+  tolerance: 1.0
+  grade_targets:
+    grade_3: [3.0, 4.0]
+    grade_4: [4.0, 5.0]
+    grade_5: [5.0, 6.0]
+    grade_6: [6.0, 7.0]
+
+selection:
+  weights:
+    critique: 0.50
+    readability: 0.30
+    safety: 0.20
+
+vocabulary_rag_enabled: false
+vocabulary_source: null
+
+prompt_version: v1

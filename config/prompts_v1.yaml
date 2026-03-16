@@ -1,0 +1,149 @@
+version: v1
+
+outline:
+  system: |
+    You are an experienced Indian children's storyteller who has spent 20 years writing for children in {location_type} India. You understand daily lives, festivals, foods, landscapes, and school experiences of children growing up in this region. You write stories that feel authentic and familiar to children from these communities, while being accessible and engaging for ESL learners.
+
+  user_cot: |
+    I need you to create a story outline for Grade {target_grade} ESL students. The story is set in {location}.
+    Cultural context: {culture_context}
+
+    Before creating the outline, work through these steps carefully:
+    1. List 5 specific, authentic cultural details a child living here would recognize — avoid stereotypes, focus on everyday life (foods they eat, games they play, what their neighborhood looks like, what happens at school).
+    2. Identify a core moral lesson appropriate for Grade {target_grade} children.
+    3. Create an outline with a clear beginning, middle, and end that naturally incorporates these cultural details.
+    4. Create character profiles of real children from this region — give them authentic names, realistic family situations, and age-appropriate personalities.
+
+    Respond with a JSON object containing:
+    - "cultural_elements": list of objects with "detail" and "category" fields
+    - "moral_lesson": string
+    - "plot": object with "beginning", "middle", "end" string fields
+    - "characters": list of objects with "name", "age", "personality", "background" fields
+    - "setting_description": string describing the physical environment
+    - "title_suggestions": list of 3 possible story titles
+
+  user_elaborate: |
+    Based on this outline, elaborate on the characters and environment to make them more vivid and authentic:
+
+    {outline_json}
+
+    For each character:
+    - Add specific mannerisms or habits
+    - Describe what they wear (region-appropriate clothing)
+    - Add a personal goal or challenge they face
+
+    For the environment:
+    - Add sensory details (sounds, smells, textures)
+    - Describe the time of day and weather
+    - Include specific local landmarks or features
+
+    Respond with a JSON object containing:
+    - "characters": list of enriched character objects with additional "mannerisms", "clothing", "personal_goal" fields
+    - "environment": object with "sensory_details", "time_and_weather", "local_features" fields
+    - "refined_plot": object with "beginning", "middle", "end" fields (updated to incorporate new details)
+
+generation:
+  system: |
+    You are a skilled children's story writer creating an English story for Grade {target_grade} ESL students in India. Write in clear, engaging English that is accessible to non-native speakers. Use simple sentence structures with occasional complex sentences for variety. Include culturally authentic details naturally — don't explain them as exotic, present them as normal parts of life.
+
+    Writing guidelines:
+    - Target {word_count_min}-{word_count_max} words
+    - Use vocabulary appropriate for Grade {target_grade} (ages {age_min}-{age_max})
+    - Include 3-5 vocabulary words that might be new for ESL learners, with enough context for meaning to be inferred
+    - Write in third person past tense
+    - Include dialogue to make the story engaging
+    - Show, don't tell — use actions and dialogue to convey emotions
+
+  user: |
+    Write a children's story based on this approved outline:
+
+    {outline_json}
+
+    Respond with a JSON object containing:
+    - "title": string
+    - "sections": list of objects with "heading" (Beginning/Middle/End) and "content" (the story text) fields
+    - "characters": list of objects with "name" and "role" fields
+    - "vocabulary_words": list of objects with "word", "context_sentence", and "simple_definition" fields
+    - "word_count": integer
+    - "moral_lesson": string (the lesson conveyed through the story)
+
+critique:
+  system: |
+    You are a Grade {target_grade} reading specialist with expertise in ESL education in Indian schools. You have 15 years of experience evaluating reading materials for children aged {age_min}-{age_max}. Evaluate stories on 5 dimensions, providing specific evidence from the text for each score.
+
+    Scoring guide (1-5):
+    1 = Significantly below standard, major issues
+    2 = Below standard, notable issues
+    3 = Meets basic standard, some room for improvement
+    4 = Good quality, minor improvements possible
+    5 = Excellent, publication-ready
+
+  user: |
+    Evaluate this children's story written for Grade {target_grade} ESL students:
+
+    {story_json}
+
+    Score each dimension 1-5 with specific evidence:
+
+    1. **Vocabulary Level**: Are words appropriate for Grade {target_grade} ESL learners? Are new words introduced with sufficient context?
+    2. **Cultural Authenticity**: Are cultural details accurate, specific, and presented naturally (not as exotic)? Do they avoid stereotypes?
+    3. **Sentence Clarity**: Are sentences clear and well-structured for ESL readers? Is there good variety without being confusing?
+    4. **Narrative Coherence**: Does the story flow logically? Is the moral lesson woven in naturally?
+    5. **Child-Friendliness**: Is the content engaging and appropriate? Will children enjoy this story?
+
+    Respond with a JSON object containing:
+    - "dimensions": list of objects with "name", "score" (1-5), "evidence" (quote from text), "suggestion" (specific improvement) fields
+    - "overall_score": float (average of dimension scores)
+    - "revision_priorities": list of strings (ordered by importance, what to fix first)
+    - "strengths": list of strings (what works well)
+
+revision:
+  system: |
+    You are an expert editor of children's ESL reading materials. Your job is to revise stories based on specific critique feedback while preserving the story's voice, cultural authenticity, and charm. Make targeted improvements — do not rewrite from scratch.
+
+  user: |
+    Revise this children's story based on the critique below. Focus on the revision priorities in order.
+
+    ORIGINAL STORY:
+    {story_json}
+
+    CRITIQUE:
+    {critique_json}
+
+    Revision priorities (address in this order):
+    {revision_priorities}
+
+    Guidelines:
+    - Keep the same story structure and characters
+    - Maintain the word count between {word_count_min}-{word_count_max} words
+    - Preserve cultural details — improve their integration if needed but don't remove them
+    - Address each revision priority specifically
+
+    Respond with a JSON object in the same format as the original story:
+    - "title": string
+    - "sections": list of objects with "heading" and "content" fields
+    - "characters": list of objects with "name" and "role" fields
+    - "vocabulary_words": list of objects with "word", "context_sentence", and "simple_definition" fields
+    - "word_count": integer
+    - "moral_lesson": string
+    - "revisions_made": list of strings (what was changed and why)
+
+safety:
+  system: |
+    You are a child safety content reviewer for Indian school materials. Your role is to ensure stories are safe, appropriate, and culturally sensitive for classroom use. Children's stories can include mild conflict, challenges, and age-appropriate emotions — don't be overly restrictive. Focus on catching genuinely problematic content.
+
+  user: |
+    Review this children's story for safety and appropriateness in an Indian school classroom for Grade {target_grade} students:
+
+    {story_json}
+
+    Check these categories:
+    1. **Language Appropriateness**: Any inappropriate language, slang, or double meanings?
+    2. **Cultural Sensitivity**: Any stereotypes, religious bias, caste references, or cultural insensitivity?
+    3. **Age Appropriateness**: Any content too mature, scary, or complex for ages {age_min}-{age_max}?
+    4. **Educational Suitability**: Does the story support positive values? Any problematic moral lessons?
+
+    Respond with a JSON object containing:
+    - "passed": boolean (true if safe for classroom use)
+    - "flags": list of objects with "category", "severity" ("info"/"warning"/"block"), "description", "quote" (text excerpt if applicable) fields
+    - "summary": string (brief overall assessment)
