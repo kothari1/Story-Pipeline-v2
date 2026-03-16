@@ -1,0 +1,50 @@
+{
+  "dimensions": [
+    {
+      "name": "Vocabulary Level",
+      "score": 5,
+      "evidence": "The story uses Grade 4-appropriate vocabulary throughout, with context clues naturally embedded. For example, 'hesitated' is used in a sentence where the physical action ('for a long moment. Then he nodded') makes the meaning clear. Cultural terms like 'bhakri,' 'thecha,' and 'puran poli' are either explained inline ('sweet flatbread stuffed with jaggery and lentils') or through surrounding context ('green chilies, garlic, peanuts, and salt, ground on a stone'). Similes are accessible: 'like a bright blue-and-white box,' 'like sleeping giants,' 'like open arms.'",
+      "suggestion": "The word 'taluka' may be unfamiliar to some ESL learners outside Maharashtra. A brief embedded gloss such as 'the taluka — the group of villages around them' could help without disrupting flow."
+    },
+    {
+      "name": "Cultural Authenticity",
+      "score": 5,
+      "evidence": "The cultural details are remarkably specific and accurate: Zilla Parishad school with blue-and-white walls repainted before monsoon, steel plates for midday meals, jowar bhakri with thecha, lagori played near the Maruti temple, Bail Pola celebrations with painted horns and dhol-tasha drums, grandfather carving neem-wood bullock figures, red soil paths, Sahyadri hills, ukdiche modak, and the farming cycle of soybean in June and jowar in winter. These are presented as the natural fabric of the children's lives, not as exotic spectacle. The Marathi names (Sanika Jadhav, Rohit Kale, Aniket Shinde) and the respectful use of 'Bai' for the teacher are authentic.",
+      "suggestion": "The story could briefly mention the school's Marathi-medium context or a moment of code-switching to further ground the linguistic reality of these children, though this is a very minor point."
+    },
+    {
+      "name": "Sentence Clarity",
+      "score": 5,
+      "evidence": "Sentences are well-varied in length and structure without becoming complex. Short sentences create rhythm and emphasis: 'Rohit heard them. He pressed his lips together.' Longer descriptive sentences remain clear: 'He described how the soil smelled different before rain, like wet iron and fresh leaves.' Dialogue is natural and broken into manageable turns. Paragraphs are short, aiding comprehension. The story avoids passive voice and complex subordinate clauses that would challenge ESL readers.",
+      "suggestion": "A few sentences in the middle section string together multiple details with commas and dashes — for instance, 'Priya brought her mother's thecha recipe written on a card — green chilies, garlic, peanuts, and salt, ground on a stone.' This is manageable but could be split for lower-proficiency ESL readers: 'Priya brought her mother's thecha recipe written on a card. The recipe used green chilies, garlic, peanuts, and salt, all ground on a stone.'"
+    },
+    {
+      "name": "Narrative Coherence",
+      "score": 5,
+      "evidence": "The story follows a clean three-act structure: the competition is announced and the conflict is established (Rohit feels invisible, Aniket mocks him); the project transforms through collaboration (Rohit's real-world knowledge + Sanika's art); and the resolution brings both the competition result and interpersonal reconciliation. The moral lesson — 'No knowledge is small. The child who knows the earth knows the world' — emerges organically from the events rather than being imposed. Bai's early hint ('a good project needs more than pretty pictures. It needs truth') foreshadows the arc perfectly. The Bail Pola celebration serves as both cultural context and narrative climax.",
+      "suggestion": "Aniket's change of heart could be slightly more developed — perhaps a brief moment where he watches Rohit work and reflects internally, rather than just walking over one day. This would make his apology at the end feel even more earned."
+    },
+    {
+      "name": "Child-Friendliness",
+      "score": 5,
+      "evidence": "The story centers on experiences deeply familiar to rural Indian children — school assembly under a tree, midday meals, playing lagori, helping with farm work, festival preparations. The emotional arc is compelling and age-appropriate: Rohit's feeling of being invisible, the sting of being mocked, and the satisfaction of being recognized. The second-prize result is realistic and avoids the 'always win first place' trope, making it more believable. Sensory details engage young readers: 'the soil smelled like wet iron and fresh leaves,' 'eating warm puran poli with their hands.' The ending line — 'He felt seen' — is powerful yet simple enough for a 9-year-old to understand emotionally.",
+      "suggestion": "The story is on the longer side at 1,620 words, which may challenge some Grade 4 ESL readers in a single sitting. Consider adding a natural break point or slightly trimming the middle section (e.g., the lagori scene, while charming, could be shortened) to bring it closer to 1,400 words."
+    }
+  ],
+  "overall_score": 5.0,
+  "revision_priorities": [
+    "Consider adding a brief gloss for 'taluka' and 'Block Education Office' for ESL readers unfamiliar with Indian administrative terms",
+    "Slightly develop Aniket's internal shift before his apology to strengthen character arc",
+    "Consider trimming 100-200 words from the middle section to improve pacing for ESL readers",
+    "Split one or two longer compound sentences in the middle section for lower-proficiency readers"
+  ],
+  "strengths": [
+    "Exceptionally authentic cultural detail — Bail Pola, Zilla Parishad school, Marathi food, farming cycles, and village life are rendered with lived-in specificity rather than encyclopedic distance",
+    "The moral lesson emerges naturally from the narrative rather than being stated didactically until the very end, and even then Bai's words feel earned",
+    "Strong sensory writing that is accessible to children: similes like 'like sleeping giants' and descriptions like 'the soil smelled like wet iron and fresh leaves' make the village vivid",
+    "Well-drawn characters with realistic motivations — Sanika's artistic confidence, Rohit's quiet knowledge, Aniket's eventual growth — all feel true to 9-10-year-old behavior",
+    "The vocabulary words are introduced in rich, self-explanatory contexts, making them genuinely teachable",
+    "The second-prize result is refreshingly realistic and teaches children that success doesn't require being first",
+    "The story validates rural knowledge and farming life without being preachy, making children from agricultural backgrounds feel seen and valued"
+  ]
+}

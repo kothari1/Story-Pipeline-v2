@@ -1,0 +1,50 @@
+{
+  "dimensions": [
+    {
+      "name": "Vocabulary Level",
+      "score": 5,
+      "evidence": "The story uses age-appropriate English while naturally introducing cultural terms with built-in context. For example, 'My ajoba — my grandfather — carved these' uses an em dash to define the Marathi word immediately. Similarly, 'bhakri with thecha' and 'puran poli' are introduced in food contexts that make their meaning clear. Words like 'hesitated,' 'procession,' and 'illustration' are used in clear, supportive sentences. The vocabulary list is well-chosen and the context sentences are drawn directly from the story.",
+      "suggestion": "The word 'heartfelt' listed in the vocabulary section has a context sentence ('The judges are deeply impressed by how real and heartfelt the project is') that does not actually appear in the story text. This should be corrected by either inserting that sentence into the narrative or choosing a different context sentence that matches the actual text."
+    },
+    {
+      "name": "Cultural Authenticity",
+      "score": 5,
+      "evidence": "The cultural details are remarkably specific and authentic to rural Maharashtra: Zilla Parishad school, Sahyadri hills near Satara, red laterite soil, sugarcane and soybean farming, Bail Pola festival traditions (washing bullocks, painting horns, feeding puran poli before the family eats), dhol-tasha drums, lagori game, steel tiffin boxes, bhakri with thecha, and the respectful address 'Kavita Bai.' The detail 'We feed them puran poli before we eat any ourselves, because they work the hardest' is a genuine cultural practice presented from the insider perspective of a farming child, not as an exotic curiosity.",
+      "suggestion": "Consider adding one brief line about the significance of the neem tree itself in village life (shade, medicinal use), since it serves as the story's central symbol and title. This would deepen an already excellent cultural layer."
+    },
+    {
+      "name": "Sentence Clarity",
+      "score": 5,
+      "evidence": "Sentences are consistently clear and well-varied. Short, punchy sentences ('He said nothing, but his ears turned red.' 'Rohit smiled — a real, wide smile.') alternate with longer descriptive ones ('Red soil paths connected the houses, and sugarcane fields stretched in every direction like a green ocean.'). Dialogue is natural and accessible: '\"Then let them laugh,\" Sanika said firmly. \"Mud and bullocks are what our village is built on.\"' Complex ideas are broken into manageable clauses, and paragraph breaks support comprehension.",
+      "suggestion": "A few sentences in the middle section could be slightly shortened for ESL pacing. For instance, 'He explained to the group how farmers plant soybean when the monsoon arrives, how sugarcane grows tall over many months, and why Bail Pola is the most important day for farming families' packs three ideas into one sentence — splitting it into two would aid comprehension for weaker readers."
+    },
+    {
+      "name": "Narrative Coherence",
+      "score": 5,
+      "evidence": "The story follows a clear three-act structure: the competition is announced (inciting incident), Sanika discovers Rohit's knowledge under the neem tree (turning point), and the class wins second prize and celebrates Bail Pola together (resolution). The moral lesson is woven in organically through Kavita Bai's early hint ('It needs heart and truth'), Sanika's realization ('It doesn't feel alive'), and the teacher's closing wisdom ('No knowledge is small. The child who knows the earth knows the world.'). Aniket's arc from teasing to respect is handled with subtlety — he brings a photograph without fanfare and gives 'a small nod,' which feels realistic for a child.",
+      "suggestion": "The story earns second prize rather than first, which is refreshingly realistic. One minor improvement: the transition from the competition result to the Bail Pola celebration three days later could include one sentence about how the new library books excited the class, reinforcing the tangible reward of collaboration."
+    },
+    {
+      "name": "Child-Friendliness",
+      "score": 5,
+      "evidence": "The story is deeply engaging for 9-10 year olds: it features relatable school dynamics (teasing, group work, competition), sensory details children can connect with ('they still smell like the field after rain'), and a satisfying emotional arc. The conflict is age-appropriate — social embarrassment and self-doubt rather than anything distressing. The ending is warm without being saccharine: 'They didn't need to say anything. The neem tree spread its branches wide above them.' Children from farming backgrounds will see themselves reflected; urban children will learn something new. The detail about birds flying out of the neem tree when children cheer is delightful.",
+      "suggestion": "Consider adding one moment of humor — perhaps a funny detail during the Bail Pola celebration or a lighthearted interaction between the children — to balance the story's earnest tone and increase engagement for reluctant readers."
+    }
+  ],
+  "overall_score": 5.0,
+  "revision_priorities": [
+    "Fix the 'heartfelt' vocabulary entry — the context sentence does not appear in the actual story text, creating a disconnect for classroom use",
+    "Consider splitting one or two longer compound sentences in the middle section for ESL accessibility",
+    "Add a brief humorous moment to leaven the earnest tone and engage reluctant readers",
+    "Strengthen the transition between the competition result and the Bail Pola scene with a sentence about the library books"
+  ],
+  "strengths": [
+    "Exceptionally authentic and specific cultural details from rural Maharashtra presented naturally through character experience rather than exposition",
+    "The moral lesson emerges organically through plot and character rather than being stated didactically until the very end",
+    "Aniket's redemption arc is handled with realistic subtlety — a small nod, a quiet admission — avoiding a heavy-handed 'bully learns lesson' trope",
+    "Winning second prize instead of first is a refreshingly honest outcome that teaches children effort matters even without total victory",
+    "Rich sensory language ('jowar grains that smell like the field after rain,' 'hills turned purple in the fading light') that is accessible to ESL learners",
+    "Strong representation of rural Indian children as knowledgeable and capable, countering urban-centric narratives common in Indian English textbooks",
+    "Vocabulary is scaffolded naturally — Marathi terms are defined in context without breaking narrative flow"
+  ]
+}

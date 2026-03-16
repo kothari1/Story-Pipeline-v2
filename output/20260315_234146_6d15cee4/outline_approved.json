@@ -1,0 +1,76 @@
+{
+  "cultural_elements": [
+    {
+      "detail": "Children eating bhakri (jowar or bajra flatbread) with thecha (spicy green chili chutney) and yogurt for lunch, packed in a small steel tiffin box for school",
+      "category": "food"
+    },
+    {
+      "detail": "Playing lagori (seven stones) and viti-dandu in the open ground near the village temple after school hours, with teams formed from neighboring houses",
+      "category": "games"
+    },
+    {
+      "detail": "The village has a Zilla Parishad school with a blue-and-white painted building, a neem tree in the courtyard where morning assembly happens, and a midday meal program where children sit in rows with steel plates",
+      "category": "school"
+    },
+    {
+      "detail": "Families growing sugarcane, soybean, and jowar on small plots of farmland, with fathers driving bullock carts or tractors to the fields early in the morning and mothers tending to the kitchen garden with tomatoes, mirchi, and shepu (dill)",
+      "category": "daily life"
+    },
+    {
+      "detail": "During the festival of Bail Pola, families decorating their bullocks with colorful beads, necklaces, and painted horns, feeding them puran poli, and parading them through the village with dhol-tasha music",
+      "category": "festival"
+    }
+  ],
+  "moral_lesson": "Working together and respecting every person's contribution — no matter how small — helps the whole community succeed. True friendship means lifting others up rather than competing against them.",
+  "plot": {
+    "beginning": "Sanika and Rohit are classmates in the Zilla Parishad school in a village near Satara. Their teacher, Bai (ma'am), announces that the school will participate in the taluka-level 'Best Village Display' competition during the upcoming Bail Pola festival week. Each class must prepare a project showing something special about their village. Sanika is excited because she loves drawing, but Rohit feels nervous because he thinks he has no special talent to offer. He is quiet and often helps his father in the sugarcane fields after school. Some children tease him, saying farmers' sons only know about mud and bullocks, not school competitions.",
+    "middle": "Bai divides the class into groups and asks them to create a display about their village's farming life. Sanika's group starts making charts and drawings, but they realize their project looks empty — it has pretty pictures but no real story. Meanwhile, Rohit quietly brings in a small sugarcane stalk, dried jowar grains, and tiny hand-carved wooden bullock toys his grandfather made. He knows the names of every crop season, how the soil smells before rain, and why farmers celebrate Bail Pola to thank their bullocks. Sanika notices this and asks Rohit to join her group. At first, Rohit hesitates, remembering the teasing. But Sanika insists, saying, 'Your knowledge is the most important part of our project.' Together, they combine Sanika's colorful drawings with Rohit's real farm items and stories. Rohit explains the cycle of sowing and harvesting, and Sanika paints it beautifully. Other children also contribute — one brings her mother's thecha recipe written on a card, another brings a photo of decorated bullocks from last year's Pola. The project becomes a living, breathing portrait of their village.",
+    "end": "On the day of the taluka competition, judges visit the school. Rohit, who was once too shy to speak, stands in front of the display and explains each item with pride — the jowar grains, the sugarcane piece, his grandfather's toy bullocks, and the Bail Pola traditions. Sanika supports him, pointing to her illustrations. The judges are deeply impressed by how real and heartfelt the project is. Their class wins second prize — a set of books for the school library. But more importantly, the children learn that every person's life experience is valuable. Rohit is no longer teased; instead, children ask him to tell more stories about the farm. During the Bail Pola celebration that week, Rohit's family decorates their bullock and Sanika joins the parade, and they eat puran poli together at Rohit's house, laughing under the neem tree. Bai tells the class, 'No knowledge is small. The child who knows the earth knows the world.'"
+  },
+  "characters": [
+    {
+      "name": "Sanika Jadhav",
+      "age": 9,
+      "personality": "Creative, enthusiastic, and kind-hearted. She loves drawing with colored pencils and is always the first to raise her hand in class. She is talkative and makes friends easily, but she is also a good listener when it matters.",
+      "background": "Lives with her parents and grandmother in a pucca house near the village market. Her father runs a small grocery shop and her mother is a tailor. Her grandmother tells her stories from the Mahabharata every night before bed. Sanika dreams of becoming an artist.",
+      "mannerisms": "",
+      "clothing": "",
+      "personal_goal": ""
+    },
+    {
+      "name": "Rohit Kale",
+      "age": 10,
+      "personality": "Quiet, observant, hardworking, and deeply connected to nature. He is shy in the classroom but becomes confident and knowledgeable when talking about farming, animals, or the seasons. He has a gentle way with animals.",
+      "background": "Lives in a modest house at the edge of the village with his parents, younger sister, and grandfather. His family owns a small plot where they grow sugarcane and soybean. After school, he helps his father in the field and feeds their pair of bullocks, whom he has named Shiva and Ganya. His grandfather carves small wooden toys as a hobby.",
+      "mannerisms": "",
+      "clothing": "",
+      "personal_goal": ""
+    },
+    {
+      "name": "Kavita Bai (Teacher)",
+      "age": 32,
+      "personality": "Warm, encouraging, and wise. She believes every child has something valuable to offer and creates opportunities for quiet students to shine. She uses local examples and stories to teach lessons.",
+      "background": "A Marathi-medium teacher at the Zilla Parishad primary school. She grew up in a nearby village and studied at the B.Ed. college in Satara. She rides a two-wheeler to school every day and is respected in the village for her dedication.",
+      "mannerisms": "",
+      "clothing": "",
+      "personal_goal": ""
+    },
+    {
+      "name": "Aniket Shinde",
+      "age": 10,
+      "personality": "Mischievous and competitive, but not mean-spirited. He teases Rohit early in the story but later genuinely appreciates Rohit's knowledge. He represents children who learn to change their attitude.",
+      "background": "His father is a milk dairy farmer and his mother works at the local anganwadi. He is good at sports, especially kabaddi, and often leads the lagori games after school.",
+      "mannerisms": "",
+      "clothing": "",
+      "personal_goal": ""
+    }
+  ],
+  "setting_description": "The story is set in a small farming village about 15 kilometers from Satara city, nestled in the green, hilly landscape of western Maharashtra. The village sits in a valley with the Sahyadri hills visible in the distance, their tops often wrapped in monsoon clouds. Red laterite soil paths connect clusters of houses — some pucca with tin or concrete roofs, some older kaccha houses with tiled roofs. Sugarcane fields and soybean plots stretch out on all sides, bordered by rows of mango and tamarind trees. A small river runs nearby, where women wash clothes on flat stones and children splash after school on hot days. At the center of the village stands a Maruti (Hanuman) temple with an old peepal tree, where elders sit and talk in the evenings. The Zilla Parishad school is a single-story blue-and-white building with four classrooms, a dusty playground, and a large neem tree in the courtyard where students gather for morning prayers and midday meals. The air smells of wood smoke in the mornings and wet earth during the monsoon.",
+  "title_suggestions": [
+    "Rohit's Gift from the Farm",
+    "The Sugarcane Project — A Village Story",
+    "Under the Neem Tree"
+  ],
+  "environment": null,
+  "refined_plot": null
+}

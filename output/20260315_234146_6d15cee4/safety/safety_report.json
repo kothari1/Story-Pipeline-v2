@@ -1,0 +1,38 @@
+[
+  {
+    "passed": true,
+    "flags": [
+      {
+        "category": "Cultural Sensitivity",
+        "severity": "info",
+        "description": "The story portrays farming communities and rural life positively, which is appropriate. However, there is a subtle implication that Rohit's knowledge comes 'only' from farming background (through Aniket's teasing). While the story ultimately rejects this stereotype and celebrates Rohit's expertise, teachers should be aware this reflects real-world biases that exist and are being critiqued in the narrative.",
+        "quote": "What will Rohit do for the project? He only knows about mud and bullocks!"
+      },
+      {
+        "category": "Age Appropriateness",
+        "severity": "info",
+        "description": "The story includes mild social conflict (teasing/bullying by Aniket) and Rohit's emotional experience of feeling 'invisible.' This is age-appropriate for Grade 4 and serves an educational purpose—showing how exclusion feels and how it can be remedied through inclusion and recognition.",
+        "quote": "Aniket said loudly, 'What will Rohit do for the project? He only knows about mud and bullocks!' Some boys laughed. Rohit heard them."
+      }
+    ],
+    "summary": "This story is safe, culturally appropriate, and highly suitable for Grade 4 Indian classrooms. It celebrates rural life, farming knowledge, artistic expression, collaboration, and humility. The narrative actively teaches children to value diverse contributions and reject stereotypes about farming communities. The mild conflict (teasing) is age-appropriate and leads to positive resolution and character growth. Language is clear, vocabulary is well-chosen with helpful definitions, and the moral lesson—that all knowledge is valuable and collaboration strengthens communities—is constructive and inclusive. No content is inappropriate, offensive, or problematic for classroom use."
+  },
+  {
+    "passed": true,
+    "flags": [
+      {
+        "category": "Cultural Sensitivity",
+        "severity": "info",
+        "description": "The story centers on farming life and Bail Pola festival, which is primarily a Maharashtrian celebration. While this is culturally authentic and appropriate for an Indian school context, teachers in non-Maharashtrian regions may want to provide brief cultural context about the festival and its significance to ensure all students feel included and understand the cultural reference.",
+        "quote": "On Pola, we thank Shiva and Ganya for their hard work. We wash them, paint their horns with bright colors, put bead necklaces around their necks, and feed them puran poli."
+      },
+      {
+        "category": "Age Appropriateness",
+        "severity": "info",
+        "description": "The story mentions Rohit working in sugarcane fields after school. While child labor is a sensitive topic in India, the context here is clearly family farm work, which is culturally normal and educational rather than exploitative. The narrative frames this positively as knowledge-building and family contribution rather than hardship.",
+        "quote": "After school, while other children played lagori near the temple, Rohit walked home to help his father in the sugarcane fields."
+      }
+    ],
+    "summary": "This is a well-crafted, culturally authentic story that is safe and appropriate for Grade 4 Indian classrooms. It promotes positive values including respect for diverse knowledge, overcoming social prejudice, collaborative learning, and appreciation for agricultural heritage. The language is age-appropriate, the moral lessons are constructive, and cultural elements are portrayed respectfully. The story handles potential sensitivity around rural work and socioeconomic differences tactfully, using them as teaching moments about dignity and respect rather than as sources of shame. Minor note: teachers may wish to provide brief cultural context about Bail Pola for students unfamiliar with Maharashtrian traditions, but this is not a safety concern. Highly recommended for classroom use."
+  }
+]
