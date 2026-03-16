@@ -124,9 +124,15 @@ def cli() -> None:
     type=click.Path(exists=True),
     help="Config directory path",
 )
-@click.option("--fast", is_flag=True, help="Use Flash for critique instead of Pro")
+@click.option("--fast", is_flag=True, help="Use Flash for critique instead of Pro (Gemini only)")
 @click.option("--no-review", is_flag=True, help="Skip HITL outline review")
 @click.option("--resume", "resume_run_id", default=None, help="Resume a previous run by ID")
+@click.option(
+    "--provider",
+    type=click.Choice(["gemini", "claude"], case_sensitive=False),
+    default="gemini",
+    help="LLM provider to use (default: gemini)",
+)
 @click.option("--log-level", default="INFO", help="Logging level")
 def generate(
     location: str,
@@ -136,6 +142,7 @@ def generate(
     fast: bool,
     no_review: bool,
     resume_run_id: str | None,
+    provider: str,
     log_level: str,
 ) -> None:
     """Generate a children's story through the full pipeline."""
@@ -146,12 +153,18 @@ def generate(
         console.print("[red]Error: --location and --culture are required for new runs[/red]")
         sys.exit(1)
 
-    api_key = os.environ.get("GOOGLE_API_KEY")
-    if not api_key:
-        console.print("[red]Error: GOOGLE_API_KEY not set in environment or .env[/red]")
-        sys.exit(1)
+    if provider == "claude":
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            console.print("[red]Error: ANTHROPIC_API_KEY not set in environment or .env[/red]")
+            sys.exit(1)
+    else:
+        api_key = os.environ.get("GOOGLE_API_KEY")
+        if not api_key:
+            console.print("[red]Error: GOOGLE_API_KEY not set in environment or .env[/red]")
+            sys.exit(1)
 
-    pipeline = StoryPipeline(config_dir=config_dir, api_key=api_key, fast=fast)
+    pipeline = StoryPipeline(config_dir=config_dir, api_key=api_key, fast=fast, provider=provider)
     callback = None if no_review else review_outline
 
     run_id = pipeline.run(

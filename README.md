@@ -1,6 +1,6 @@
 # Children's Story Generation Pipeline - User Guide
 
-A multi-stage LLM pipeline that generates culturally authentic English stories for Indian children (Grades 3-6) using Google's Gemini API. Built for Stanford's GC Lab ESL curriculum integration.
+A multi-stage LLM pipeline that generates culturally authentic English stories for Indian children (Grades 3-6). Supports both **Google Gemini** and **Anthropic Claude** as providers. Built for Stanford's GC Lab ESL curriculum integration.
 
 ## How It Works
 
@@ -26,7 +26,7 @@ Total: **9 API calls per story**
 ### 1. Prerequisites
 
 - Python 3.10 or higher
-- A Google AI Studio account (free)
+- An API key from Google AI Studio **or** Anthropic (or both)
 
 ### 2. Clone the Repository
 
@@ -41,22 +41,27 @@ cd Story-Pipeline-v2
 pip install -e ".[dev]"
 ```
 
-### 4. Get a Gemini API Key
+### 4. Get an API Key
 
+**Option A — Google Gemini (free tier available):**
 1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
-2. Click **Create API Key**
-3. Copy the key
+2. Click **Create API Key** and copy it
 
-### 5. Set Up Your API Key
+**Option B — Anthropic Claude:**
+1. Go to [Anthropic Console](https://console.anthropic.com/settings/keys)
+2. Click **Create Key** and copy it
+
+### 5. Set Up Your API Key(s)
 
 ```bash
 cp .env.example .env
 ```
 
-Open `.env` and paste your key:
+Open `.env` and paste whichever key(s) you have:
 
 ```
-GOOGLE_API_KEY=your_key_here
+GOOGLE_API_KEY=your_gemini_key_here
+ANTHROPIC_API_KEY=your_anthropic_key_here
 ```
 
 ### 6. Verify Installation
@@ -74,11 +79,19 @@ All 23 tests should pass.
 ### Basic Command
 
 ```bash
+# Using Gemini (default)
 python -m src.cli.app generate \
     --location "a village near Satara, in the state of Maharashtra" \
     --culture "Marathi speaking community, with major occupation being farming" \
     --grade 4 \
     --fast
+
+# Using Claude
+python -m src.cli.app generate \
+    --provider claude \
+    --location "a village near Satara, in the state of Maharashtra" \
+    --culture "Marathi speaking community, with major occupation being farming" \
+    --grade 4
 ```
 
 ### Command Options
@@ -88,7 +101,8 @@ python -m src.cli.app generate \
 | `--location` | Yes (new run) | Where the story is set |
 | `--culture` | Yes (new run) | Cultural context for authentic details |
 | `--grade` | No (default: 4) | Target grade level: 3, 4, 5, or 6 |
-| `--fast` | No | Use Flash for all stages (recommended on free tier) |
+| `--provider` | No (default: gemini) | LLM provider: `gemini` or `claude` |
+| `--fast` | No | Use Flash for all stages — Gemini only (recommended on free tier) |
 | `--no-review` | No | Skip the outline review step |
 | `--resume RUN_ID` | No | Resume a crashed/interrupted run |
 | `--config-dir` | No | Path to config directory (default: `config/`) |
@@ -118,32 +132,40 @@ The pipeline detects which stages are already complete and skips them.
 
 ---
 
-## Free Tier Rate Limits
+## Rate Limits
 
-The Gemini free tier has strict limits:
+### Gemini (free tier)
 
 | Model | Requests/Minute | Requests/Day |
 |-------|-----------------|--------------|
 | Gemini 2.5 Flash | 5 | 20 |
-| Gemini 2.5 Pro | 0 | 0 (often unavailable) |
+| Gemini 2.5 Pro | 0 | 0 (unavailable on free tier) |
 
-**What this means:**
-- You can generate **~2 stories per day** on the free tier
-- Always use `--fast` flag (it uses Flash for everything)
-- If you hit a rate limit, the pipeline retries automatically (waits ~30-60s)
-- If all retries fail, use `--resume` to pick up later
+- Use `--fast` to use Flash for all stages
+- ~2 stories/day on the free tier
+- If you hit a limit, the pipeline retries automatically, then use `--resume` to pick up later
+- Check usage: [Google AI Studio Rate Limits](https://ai.dev/rate-limit)
 
-To check your current usage: [Google AI Studio Rate Limits](https://ai.dev/rate-limit)
+### Claude (Anthropic)
+
+Claude's rate limits depend on your usage tier (Tier 1 starts generous). One full pipeline run uses ~9 API calls. There is no free tier — see [Anthropic pricing](https://www.anthropic.com/pricing).
 
 ### Updating Rate Limits
 
-If your account has different limits (e.g., paid tier), edit `config/models.yaml`:
+Edit `config/models.yaml` to match your account's actual limits:
 
 ```yaml
+# Gemini section
 models:
   flash:
-    rpm: 5      # Change to your RPM limit
-    rpd: 20     # Change to your RPD limit
+    rpm: 5      # your RPM
+    rpd: 20     # your RPD
+
+# Claude section
+claude_models:
+  opus:
+    rpm: 50     # your RPM
+    rpd: 1000   # your RPD
 ```
 
 ---

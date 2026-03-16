@@ -1,3 +1,4 @@
+# ── Gemini (provider: gemini) ────────────────────────────────────────────────
 models:
   flash:
     name: "gemini-2.5-flash"
@@ -31,3 +32,28 @@ stage_models:
 
 fallback:
   pro: flash
+
+# ── Claude (provider: claude) ─────────────────────────────────────────────────
+claude_models:
+  opus:
+    name: "claude-opus-4-6"
+    rpm: 50
+    rpd: 1000
+    default_temperature: 0.8
+    max_output_tokens: 8192
+    min_call_spacing_seconds: 1
+  haiku:
+    name: "claude-haiku-4-5"
+    rpm: 50
+    rpd: 2000
+    default_temperature: 0.3
+    max_output_tokens: 4096
+    min_call_spacing_seconds: 1
+
+claude_stage_models:
+  outline: opus
+  generation: opus
+  critique: opus
+  critique_fast: opus
+  revision: opus
+  safety: haiku

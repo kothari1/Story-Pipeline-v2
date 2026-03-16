@@ -7,6 +7,7 @@ from pathlib import Path
 import yaml
 
 from src.evaluation.readability import assess
+from src.llm.claude_client import ClaudeClient
 from src.llm.client import GeminiClient
 from src.llm.prompts import PromptManager
 from src.llm.rate_limiter import ModelLimit, RateLimiter
@@ -29,10 +30,15 @@ logger = logging.getLogger(__name__)
 
 class StoryPipeline:
     def __init__(
-        self, config_dir: str | Path, api_key: str, fast: bool = False
+        self,
+        config_dir: str | Path,
+        api_key: str,
+        fast: bool = False,
+        provider: str = "gemini",
     ) -> None:
         self.config_dir = Path(config_dir)
         self.fast = fast
+        self.provider = provider
 
         with open(self.config_dir / "models.yaml") as f:
             self._models_cfg = yaml.safe_load(f)
@@ -42,31 +48,47 @@ class StoryPipeline:
         prompt_version = self._pipeline_cfg.get("prompt_version", "v1")
         self.prompts = PromptManager(self.config_dir, version=prompt_version)
 
-        # Build rate limiter
+        # Pick model config section based on provider
+        if provider == "claude":
+            models_section = self._models_cfg["claude_models"]
+            self._stage_models = self._models_cfg["claude_stage_models"]
+        else:
+            models_section = self._models_cfg["models"]
+            self._stage_models = self._models_cfg["stage_models"]
+
+        # Build rate limiter from whichever model section is active
         limits: dict[str, ModelLimit] = {}
-        for key, mcfg in self._models_cfg["models"].items():
+        for key, mcfg in models_section.items():
             limits[mcfg["name"]] = ModelLimit(
                 rpm=mcfg["rpm"],
                 rpd=mcfg["rpd"],
                 min_spacing=mcfg["min_call_spacing_seconds"],
             )
         self.rate_limiter = RateLimiter(limits)
-        self.client = GeminiClient(api_key, self.rate_limiter)
 
+        if provider == "claude":
+            self.client = ClaudeClient(api_key, self.rate_limiter)
+        else:
+            self.client = GeminiClient(api_key, self.rate_limiter)
+
+        self._models_section = models_section
         self.output_base = Path("output")
 
     def _model_name(self, stage: str) -> str:
         stage_key = stage
         if stage == "critique" and self.fast:
             stage_key = "critique_fast"
-        model_key = self._models_cfg["stage_models"][stage_key]
-        return self._models_cfg["models"][model_key]["name"]
+        model_key = self._stage_models[stage_key]
+        return self._models_section[model_key]["name"]
 
     def _fallback_model(self, stage: str) -> str | None:
-        model_key = self._models_cfg["stage_models"].get(stage)
+        # Only Gemini has a fallback config; Claude doesn't need one
+        if self.provider != "gemini":
+            return None
+        model_key = self._stage_models.get(stage)
         if model_key and model_key in self._models_cfg.get("fallback", {}):
             fb_key = self._models_cfg["fallback"][model_key]
-            return self._models_cfg["models"][fb_key]["name"]
+            return self._models_section[fb_key]["name"]
         return None
 
     def _detect_stage(self, run_dir: Path) -> str:
